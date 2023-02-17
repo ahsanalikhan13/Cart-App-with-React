@@ -1,0 +1,10 @@
+@import 'colors';
+
+.notification{
+    color: $tertiary;
+    
+    >h2{
+        text-align: center;
+        padding: 20rem;
+}
+}
