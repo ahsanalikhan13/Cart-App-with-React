@@ -7,4 +7,4 @@ const CartItem = ({imgSrc, name, price, qty, decrement, increment, deleteHandler
   )
 }
 
-export default CartItem
+export default CartItem;
