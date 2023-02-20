@@ -5,10 +5,15 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+  height: 10vh;
 
   > h2 {
     text-transform: uppercase;
     color: $primary;
+    font-size: 1.0rem;
+    display: flex;
+    align-items: center;
+    color: $tertiary;
   }
 
   > div {
@@ -19,6 +24,7 @@ nav {
       color: $primary;
       font-size: 1.2rem;
       margin: 0 1rem;
+      color: $tertiary;
       transition: all 0.3s;
       &:hover {
         opacity: 0.5;
@@ -27,6 +33,7 @@ nav {
       > p {
         position: absolute;
         background-color: $tertiary;
+        color: $primary;
         border-radius: 50%;
         width: 15px;
         height: 15px;

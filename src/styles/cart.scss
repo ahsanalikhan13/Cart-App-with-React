@@ -9,6 +9,10 @@
     >main{
         padding: 2rem;
         overflow-y: auto;
+
+        &::-webkit-scrollbar{
+            display: none;
+        };
     
         >h1{
             color: $tertiary;
@@ -31,6 +35,8 @@
             margin: 1rem;
             font: 100 1.8rem "Roboto";
             letter-spacing: 2px;
+            font-size: 1.5rem;
+
 
             &:last-of-type{
                 font-weight: 600;

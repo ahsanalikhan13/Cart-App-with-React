@@ -1,0 +1,16 @@
+@media screen and ( max-width: 820px ) {
+    .cart{
+        background-color: $primary;
+        grid-template-columns: 1fr;
+    
+    
+        >aside{
+            padding: 2rem;
+            border-radius: 0%;
+    
+            >h2{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
