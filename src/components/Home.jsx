@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import ProductCard from './ProductCard';
 
 const img1 =
@@ -29,8 +30,11 @@ useEffect(()=>{
   setData(productList);
 },[]);
 
+
+const dispatch= useDispatch();
+
 const addToCartHandler=(options)=>{
-  console.log(options)
+  dispatch ({ type: "addToCart", payload: options })
   toast.success("Added to Cart")
 }
 

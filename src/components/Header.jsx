@@ -3,12 +3,16 @@ import { Link, useNavigate, useNavigation } from 'react-router-dom';
 // import {FiShoppingBag} from "react-icons/fi";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import { useSelector } from 'react-redux';
+
 
 
 import '../styles/header.scss';
 
 const Header = () => {
  const navigate= useNavigate();
+ const {cartItems} = useSelector((state)=> state.cart)
+
   return (
     <nav>
       {/* <h3 onClick={()=>navigate('/') } >
@@ -28,7 +32,7 @@ const Header = () => {
 
         <Link to={"/cart"}>
           <AddShoppingCartIcon/>
-          <p>{0}</p>
+          <p>{cartItems.length}</p>
         </Link>
 
         <Link to={"/notifications"}>
