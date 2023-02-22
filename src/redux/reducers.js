@@ -23,7 +23,7 @@ export const cartReducer= createReducer(
         else{
             state.cartItems.push(item);
         }
-    }
+    },
 
 
     decrement: (state, action)=>{
@@ -35,7 +35,7 @@ export const cartReducer= createReducer(
             }
             )
         }
-    }
+    },
 
 
     deleteFromCart: (state, action)=>{
