@@ -6,7 +6,7 @@ import '../styles/productcard.scss';
             <img src={imgSrc} alt={name} />
             <p>{name}</p>
             <h4>PKR {price}</h4>
-            <button onClick={() => handler({ name, price, id, quantity: 2, imgSrc })}>
+            <button onClick={() => handler({ name, price, id, quantity: 1, imgSrc })}>
             Add to Cart
             </button>
         </div>    
