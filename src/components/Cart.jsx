@@ -5,7 +5,7 @@ import CartItem from '../components/CartItem';
 
 
 const Cart = () => {
-  const {cartItems} = useSelector((state)=> state.cart)
+  const {cartItems, subTotal, shipping, tax, total} = useSelector((state)=> state.cart)
 
   const dispatch= useDispatch();
 
@@ -13,15 +13,33 @@ const Cart = () => {
     dispatch({
     type: "addToCart", 
     payload: {id},
+    });
+
+    dispatch({
+      type: "calculatePrice",
     })
   }
+
   const decrement= (id) => {
     dispatch({
       type: "decrement", 
-      payload: {id},
+      payload: id,
+      })
+
+      dispatch({
+        type: "calculatePrice",
       })
   }
-  const deleteHandler= (id) => {}
+  const deleteHandler= (id) => {
+    dispatch({
+      type: "deleteFromCart", 
+      payload: id,
+      })
+
+      dispatch({
+        type: "calculatePrice",
+      })
+  }
 
 
   return (
@@ -50,10 +68,10 @@ const Cart = () => {
       </main>
       
       <aside>
-        <h2>Subtotal: PKR {2000}</h2>
-        <h2>Shipping: PKR {500}</h2>
-        <h2>Tax Charges: PKR {100}</h2>
-        <h2>Total: PKR {2600}</h2>
+        <h2>Subtotal: PKR {subTotal}</h2>
+        <h2>Shipping: PKR {shipping}</h2>
+        <h2>Tax Charges: PKR {tax}</h2>
+        <h2>Total: PKR {total}</h2>
       </aside>
     </div>
   )
